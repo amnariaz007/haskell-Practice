@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
+{-# OPTIONS_GHC -Wno-overlapping-patterns #-}
 module Lib
     ( 
         someFunc
@@ -43,6 +45,23 @@ checkTheDay day
     | day == "TH" = "Its Thursday"
     | day == "TF" = "Its friday"
     | otherwise = "nothing"
+
+
+
+--pattern matching with functions
+favTable :: Int -> [Char]
+favTable 2   = "First table!"
+favTable 3  = "second fvrt!"
+favTable 4  = "Third favrt"
+favTable table = "Nothing special"
+
+--pattern matching with lists
+whatsInsideThisList :: [Int] -> String
+whatsInsideThisList []         = "It's empty!"
+whatsInsideThisList [x]        = "A single element: " ++ show x
+whatsInsideThisList [x, y]     = "Two elements: " ++ show x ++ " and " ++ show y
+whatsInsideThisList (x:y:z: []) = "The list has three elements: " ++ show [x,y,z]
+whatsInsideThisList (x:rest)   = "The first element is: " ++ show x ++ ", and there are quite a few more!"
        
 
 
@@ -53,6 +72,14 @@ amn x =   let
     y = x + 10
     z = y + 20
     in z
+
+--where expression
+test :: Num a => p -> a
+test z = y + 20
+    where
+        x = 5
+        y = x + 10
+        z = y + 20
 
 
 
