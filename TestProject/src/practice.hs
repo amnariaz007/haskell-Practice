@@ -74,7 +74,6 @@ amn x =   let
     in z
 
 
-
 --where expression
 test :: Num a => p -> a
 test z = y + 20
