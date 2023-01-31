@@ -1,5 +1,6 @@
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 {-# OPTIONS_GHC -Wno-overlapping-patterns #-}
+{-# OPTIONS_GHC -Wno-deferred-out-of-scope-variables #-}
 module Lib
     ( 
         someFunc
@@ -82,4 +83,20 @@ test z = y + 20
         z = y + 20
 
 
+--pattern matching for tuples
+checkForZeroes :: (Int, Int, Int) -> String
+checkForZeroes (0, 0, 0) = "Everything is a zero!"
+checkForZeroes (0, _, _) = "The first one is a zero!"
+checkForZeroes (_, 0, _) = "The second one is a zero!"
+checkForZeroes (_, _, 0) = "The third one is a zero!"
+checkForZeroes _         = "We're good!"
+        
+fruitWith :: [[Char]]
+fruitWith = filter tempFunct ["Banana", "Apricot", "Pear", "Grape", "Wood"]
+                where tempFunct x = 'b' `elem` x
 
+
+cars = [("Toyota",0), ("Nissan",0), ("Ford",0)]
+biggerThan0 (_,x) = x > 0
+                
+                
