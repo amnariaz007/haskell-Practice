@@ -84,3 +84,11 @@ test z = y + 20
 
 
 
+fruitWith :: [[Char]]
+fruitWith = filter tempFunct ["Banana", "Apricot", "Pear", "Grape", "Wood"]
+                where tempFunct x = 'b' `elem` x
+
+
+cars = [("Toyota",0), ("Nissan",0), ("Ford",0)]
+biggerThan0 (_,x) = x > 0
+                
