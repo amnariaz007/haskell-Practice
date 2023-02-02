@@ -6,6 +6,7 @@ module Lib
         someFunc
        -- doubleUs
     ) where
+    
 -- --returns the string
 someFunc :: IO ()
 someFunc = putStrLn "Amn is learning haskell"
