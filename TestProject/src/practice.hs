@@ -90,3 +90,4 @@ fruitWithA = filter tempFunct ["Apple", "Banana", "Pear", "Grape", "Wood"]
 
 cars = [("Toyota",0), ("Nissan",3), ("Ford",1)]
 biggerThan0 (_,x) = x > 0
+
